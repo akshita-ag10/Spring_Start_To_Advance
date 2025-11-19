@@ -1,0 +1,37 @@
+package com.akshita;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+
+import com.akshita.dto.StudentDTO;
+import com.akshita.service.StudentService;
+
+@SpringBootApplication
+public class Application {
+
+	public static void main(String[] args) {
+		ConfigurableApplicationContext container = SpringApplication.run(Application.class, args);
+
+		StudentService service = container.getBean(StudentService.class);
+		
+		StudentDTO sDTO = new StudentDTO();
+//		//we are not passing id here, b/c in mongo DB it is auto generated, we can also generate it according to our requirements - see below
+//		sDTO.setRoll(9548);
+//		sDTO.setName("Divij");
+//		sDTO.setCity("Gurugram");
+		
+		
+		
+//		String res = service.registerStudentInfo(sDTO);
+//		System.out.println(res);
+		System.out.println("________________________________________________");
+		
+		service.findAllStudents().forEach(s->System.out.println(s));
+		System.out.println("________________________________________________");
+
+		String status = service.removeDocument("691cc70f6cf4814153de8dd4");
+		System.out.println(status);
+	}
+
+}

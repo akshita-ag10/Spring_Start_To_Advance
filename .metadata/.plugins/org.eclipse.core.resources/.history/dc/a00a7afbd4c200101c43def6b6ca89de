@@ -1,0 +1,23 @@
+package com.akshita.dao;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.akshita.model.Bike;
+import com.akshita.view.View;
+
+public interface IBikeRepo extends JpaRepository<Bike, Integer> {
+
+	//now with these custom finder methods we will fetch data of limited columns
+	//since it is static projection, we will have the columns fixed 
+	//so here, let's go with fetching data of brand and modelName
+	//note the columns getting fetched from database is fixed here
+	
+	//now in previous project we have the return type of custom finder method as list of bikes, 
+	//here we will have it as list of result view, so, you can give any name, just the thing is that
+	//result view is an interface that has getters ( of the properties that are to be fetched ) declared there
+	
+	List<View>findByPriceLessThan(Integer p); //as usual, spirng will give the implementation of this in the proxy class
+	//since the return type is 'ResultView', from the db itself it will fetch limitted columns that are specified in the 'ResultView'
+	
+}

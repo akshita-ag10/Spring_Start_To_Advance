@@ -1,0 +1,5 @@
+package com.akshita.utils;
+
+public class IdGenerator {
+
+}

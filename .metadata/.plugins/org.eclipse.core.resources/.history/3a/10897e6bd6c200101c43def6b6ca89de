@@ -1,0 +1,10 @@
+package com.akshita.service;
+
+import java.util.List;
+
+import com.akshita.model.Bike;
+import com.akshita.view.View;
+
+public interface IBikeService {
+	List<View>fetchByPriceLessThan(Integer p);
+}

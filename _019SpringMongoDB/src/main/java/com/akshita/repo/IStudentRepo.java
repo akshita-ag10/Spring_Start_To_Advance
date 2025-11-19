@@ -1,0 +1,10 @@
+package com.akshita.repo;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+import com.akshita.model.Student;
+
+public interface IStudentRepo extends MongoRepository<Student, String> {
+
+	
+}

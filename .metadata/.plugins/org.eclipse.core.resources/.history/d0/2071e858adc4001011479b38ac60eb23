@@ -1,0 +1,5 @@
+package com.akshita.service;
+
+public interface IStudentService {
+
+}

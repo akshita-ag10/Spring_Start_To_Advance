@@ -1,0 +1,18 @@
+package com.akshita.service;
+
+import java.util.List;
+
+import com.akshita.model.Bike;
+
+public interface IBikeService {
+	
+	List<Bike> findByPrice(Double p); 
+	List<Bike> findByPriceIs(Double p); 
+	List<Bike> findByPriceEquals(Double p);
+	
+	List<Bike> findByPriceLessThan(Double pl);
+	List<Bike> findByPriceBetween(Double minP, Double maxP);
+	List<Bike> findByBrandEquals(String brand);
+	List<Bike> findByBrandInAndPriceBetween(List<String> brands, Double minP, Double maxP);
+
+}

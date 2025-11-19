@@ -1,0 +1,18 @@
+package com.akshita.dao;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.akshita.model.Bike;
+import com.akshita.view.View;
+
+public interface IBikeRepo extends JpaRepository<Bike, Integer> {
+
+	//now previously, it was static, it was fetching 2 columns and that was fixed, it will fetch 2 columns only every time
+	//this time we want it to be dynamic, so we will create diff result views 
+	//diff result view will be fetching diff set of columns
+	//so when the user want to fetch some columns, the result view that has those columns getters will be called
+	
+	<T extends View>List<T>findByPriceLessThan(Integer p); 
+	
+}

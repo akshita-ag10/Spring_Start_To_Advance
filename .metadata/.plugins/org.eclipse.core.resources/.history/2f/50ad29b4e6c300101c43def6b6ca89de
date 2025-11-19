@@ -1,0 +1,23 @@
+package com.akshita.service;
+
+import java.util.List;
+
+import com.akshita.model.Bike;
+
+public interface IBikeService {
+	
+	List<Bike> fetchByBrand(String brand);
+	List<Bike> fetchByModel(String model);
+	List<Bike> fetchByBrand(String br1, String br2);
+	List<String> fetchByPrice(Double minP, Double maxP);
+	
+//	//update
+//	int toUpdatePriceByEngine(Double newPrice, String en);
+//	
+//	//delete
+//	int toDeleteBikeByModel(String model);
+	
+	//insert
+	int toInsertBikeInfo(Integer id, String brand, String model, String engine, Double Price);
+
+}

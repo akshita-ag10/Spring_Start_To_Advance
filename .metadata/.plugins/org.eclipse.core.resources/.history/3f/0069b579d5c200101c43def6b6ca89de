@@ -1,0 +1,7 @@
+package com.akshita.view;
+
+public class ResultView1 implements View {
+
+	
+
+}

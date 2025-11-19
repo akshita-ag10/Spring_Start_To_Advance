@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://www.springframework.org/schema/beans
+               https://www.springframework.org/schema/beans/spring-beans.xsd">
+               
+               
+	
+	
+<!-- <bean id="ac" class="com.akshita.model.AcrylicColors" primary="true"></bean>--> <!-- either specify this as primary = "true" or specify autowire-candidate="false" for other qualified beans -->
+	<bean id="ac" class="com.akshita.model.AcrylicColors" ></bean>
+	<bean id="wc" class="com.akshita.model.WaterColors" autowire-candidate="false"></bean>
+	<bean id="op" class="com.akshita.model.OilPaints" autowire-candidate="false" ></bean>
+	
+	<!-- now when are using autowiring, we are not specifying that wheter to do setter injection or constructor injection
+		  if you notice, spring is going with setter injection  and notice that we have both setter and constructor in the target, still spring is choosing setter injection-->
+	<!-- specify autowire="constructor" in target bean instead of "byType", then it will go by constructor injection -->
+	
+	<bean id="artist" class="com.akshita.model.Artist" autowire="byType"> 
+	<!-- if we use, byName, then variable name in Artist class i.e. col should match the id of the bean that is to be injected -->
+	<!-- if we use, autowire="no", then it will not do autowiring -->
+		<!-- we are not injecting any bean here manually, we just created the beans and specified to autowire -->
+	</bean>
+</beans>

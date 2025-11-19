@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Metadata when not using namespace -->
+<!-- <beans xmlns="http://www.springframework.org/schema/beans"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://www.springframework.org/schema/beans
+               https://www.springframework.org/schema/beans/spring-beans.xsd">
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:p="hhtp://www.springframework.org/schema/p"
+           xmlns:c="http://www.springframework.org/schema/c"
+           xsi:schemaLocation="http://www.springframework.org/schema/beans
+               https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+	<!--  1. Passing values through xml file -->
+<bean id="ac" class="com.akshita.model.AcrylicColors" ></bean>
+	<bean id="wc" class="com.akshita.model.WaterColors" ></bean>
+	<bean id="op" class="com.akshita.model.OilPaints"  ></bean>
+
+	<bean id="artist1" class="com.akshita.model.Artist" > 
+	<!-- If you do not specify index value than you have provide the values in the series, in which constructor of this class is accepting the values -->
+	 <!-- <constructor-arg value ="Nidhi"></constructor-arg>
+	 <constructor-arg value="45"></constructor-arg>
+	 <constructor-arg ref="wc" ></constructor-arg> --> 
+	 
+	 <constructor-arg index="1" value="52"></constructor-arg>
+	 <constructor-arg index="2" ref="op"></constructor-arg>
+	 <constructor-arg index="0" value="Anju"></constructor-arg>
+	 
+	</bean>
+
+
+<!-- 2. Namespace concept -->
+<!-- in metadata see , p is property (setter injection) and c is constructor (constructor injection)
+these are just ref variable, hence we can use anything else also -->	
+	<!--  <bean id="artist1" class="com.akshita.model.Artist" p:name="Akshita" p:age="23" ></bean>-->
+
+</beans>
+               

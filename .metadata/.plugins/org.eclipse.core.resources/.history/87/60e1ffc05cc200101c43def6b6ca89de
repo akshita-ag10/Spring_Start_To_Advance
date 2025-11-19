@@ -1,0 +1,49 @@
+package com.akshita.service;
+
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.akshita.dao.IBikeRepo;
+import com.akshita.model.Bike;
+
+@Service
+public class BikeService implements IBikeService {
+	@Autowired
+	IBikeRepo repo;
+
+	@Override
+	public List<Bike> fetchByPrice(Double p) {
+		return repo.findByPrice(p);
+	}
+
+	@Override
+	public List<Bike> fetchByPriceIs(Double p) {
+		return repo.findByPriceIs(p);
+	}
+
+	@Override
+	public List<Bike> fetchByPriceEquals(Double p) {
+		return repo.findByPriceEquals(p);
+	}
+
+	@Override
+	public List<Bike> fetchByPriceLessThan(Double pl) {
+		return repo.findByPriceLessThan(pl);
+	}
+
+	@Override
+	public List<Bike> fetchByPriceBetween(Double minP, Double maxP) {
+		return repo.findByPriceBetween(minP, maxP);
+	}
+
+	@Override
+	public List<Bike> fetchByBrandEquals(String brand) {
+		return repo.findByBrandEquals(brand);
+	}
+
+	@Override
+	public List<Bike> fetchByBrandInAndPriceBetween(List<String> brands, Double minP, Double maxP) {
+		return repo.findByBrandInAndPriceBetween(brands, minP, maxP);
+	}
+
+}

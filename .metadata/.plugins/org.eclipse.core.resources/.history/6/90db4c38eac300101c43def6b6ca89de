@@ -1,0 +1,43 @@
+package com.akshita;
+
+import java.util.Date;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+import com.akshita.service.BikeService;
+
+@SpringBootApplication
+public class Application {
+
+	public static void main(String[] args) {
+		ConfigurableApplicationContext container = SpringApplication.run(Application.class, args);
+		BikeService bserve = container.getBean(BikeService.class);
+		
+		bserve.fetchByBrand("Royal Enfield").forEach(b-> System.out.println(b));
+		System.out.println("_____________________________________________________");
+		
+		bserve.fetchByModel("CB350").forEach(b->System.out.println(b));
+		System.out.println("______________________________________________________");
+		
+		bserve.fetchByBrand("Jawa", "Honda").forEach(b->System.out.println(b));
+		System.out.println("______________________________________________________");
+
+		bserve.fetchByPrice(150000.0, 205000.0).forEach(b->System.out.println(b));
+		System.out.println("______________________________________________________");
+
+//		int rowsUpdated = bserve.toUpdatePriceByEngine(230000.0, "348cc");
+//		System.out.println("Number of rows updated : " + rowsUpdated);
+//		
+//		int rowsDeleted = bserve.toDeleteBikeByModel("Roadster");
+//		System.out.println("Number of rows deleted : " + rowsDeleted);
+//	
+//		int rowsInserted = bserve.toInsertBikeInfo(001, "AkshitaBrand", "AkshiteModel", "900cc", 350000.0);
+//		System.out.println("Rows inserted : " + rowsInserted);
+		
+		Date dateTime= bserve.toGetCurrentDateTime();
+		System.out.println(dateTime);
+		
+	}
+
+}

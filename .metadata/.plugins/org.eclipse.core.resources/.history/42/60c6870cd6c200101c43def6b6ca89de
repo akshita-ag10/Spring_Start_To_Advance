@@ -1,0 +1,5 @@
+package com.akshita.view;
+
+public interface ResultView3 extends View {
+
+}

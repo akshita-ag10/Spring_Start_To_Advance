@@ -1,0 +1,17 @@
+package com.akshita.view;
+
+public class ResultView1 implements View {
+
+	@Override
+	public String getBrand() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getModelName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,43 @@
+package com.akshita.dao;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import com.akshita.model.Bike;
+
+public interface IBikeRepo extends JpaRepository<Bike, Integer> {
+
+	//CUSTOM FINDER METHODS
+	//these are finding/searching only, not for updating data in db
+	//for updating data in database we have custom query methods
+	
+	//in this interface we just declare method and it's implementation is given by spring in a proxy class
+	//spring gives implementation according to our requirement
+	//for spring to give its implementation, we have to follow a naming format for the custom finder methods
+	//findBy-{properyName}-{keyword}
+	//for keyword and other details, refer to - https://docs.spring.io/spring-data/jpa/reference/jpa/query-methods.html
+
+	
+	List<Bike> findByPrice(Integer p); //propertyname should be match exactly with the property name specified in model class
+	List<Bike> findByPriceIs(Integer p); 
+	List<Bike> findByPriceEquals(Integer p); 
+	//above 3 are same methods only
+	
+	List<Bike> findByPriceLessThan(Integer pl);
+	//notice that we are just specifying what we want (in the method name itself), we are not giving the method implementation
+	
+	List<Bike> findByPriceBetween(Integer minP, Integer maxP);
+	List<Bike> findByBrandEquals(String brand);
+	
+	//now if want to put multiple filters, like you want to get records which has brand this and cost should range between x to y
+	List<Bike> findByBrandInAndPriceBetween(List<String> brands, Integer minP, Integer maxP);
+	//we uses 'AND' keyword to implement 2 conditions
+	//'IN' keyword is like when we say 'WHERE BRAND IN ()' something like this in SQL
+	
+	
+	//NOTICE - here we are only filtering row, and we are fetching all column details for those records
+	//			we can also choose which columns we want to fetch
+	// 			there comes in the concept of static and dynamic projection -> see next project
+	
+	
+}

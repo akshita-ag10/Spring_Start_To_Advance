@@ -1,0 +1,12 @@
+package com.akshita.view;
+
+public class ResultView1 implements View {
+
+	Integer getId();
+	private String brand;
+	private String modelName;
+	private String engine;
+	private Double price;
+	
+
+}

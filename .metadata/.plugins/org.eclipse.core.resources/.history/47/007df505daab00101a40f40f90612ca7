@@ -1,0 +1,18 @@
+/**
+ * 
+ */
+package service;
+
+/**
+ * @author HP
+ *
+ */
+public class DevOpsCourse implements ICourse{
+	
+
+	public void buyTheCourse() {
+		// TODO Auto-generated method stub
+		System.out.println("Java course is purchased and fees paid is " + amount);
+
+	}
+}

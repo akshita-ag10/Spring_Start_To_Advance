@@ -1,0 +1,7 @@
+
+public class Coaching {
+	public boolean getTheCourse(double amount) {
+		return false;
+	}
+
+}

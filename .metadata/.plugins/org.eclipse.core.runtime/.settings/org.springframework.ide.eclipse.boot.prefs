@@ -1,0 +1,17 @@
+eclipse.preferences.version=1
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.data-jpa=8
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.data-mongodb=1
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.jdbc=1
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.mysql=9
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.artifactId=_019SpringMongoDB
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.bootVersion=3.5.7
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.description=SpringBoot Project with Mongo database
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.groupId=com.akshita
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.javaVersion=21
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.language=java
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.name=_019SpringMongoDB
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.packageName=com.akshita
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.packaging=jar
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.type=MAVEN
+org.springframework.ide.eclipse.boot.wizard.PreferredSelections.version=0.0.1-SNAPSHOT
+org.springframework.ide.eclipse.boot.wizard.initializr.url=https\://start.spring.io\n

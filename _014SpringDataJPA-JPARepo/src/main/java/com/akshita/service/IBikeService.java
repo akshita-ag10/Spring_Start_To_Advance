@@ -1,0 +1,27 @@
+package com.akshita.service;
+
+import java.util.List;
+import org.springframework.stereotype.Service;
+import com.akshita.model.Bike;
+
+@Service
+public interface IBikeService {
+	//inBatch - performs operation  in batch, hits db only one time
+	
+	Bike searchBikeById(Integer id);
+	List<Bike> searchBikesByIds(Iterable<Integer> ids);
+	List<Bike> searchBikesByBike(Bike bike);
+	
+	//for deleting, JPARepository provide 'inBatch' methods
+	//when we use inbatch to delete, it fire only 1 delete query and delete all required records by just 1 query, so db hits are less
+	//del method of crud repo- fires x number queries to delete x records- so if want to del 100 records, it will call del query 100 times and hence 100 times it will hit db, that is a costly process
+	//on other hand, del method of jpa repo will hit db only once for deleting 100 records
+	
+	String removeBikesByIds(List<Integer> ids);
+	String removeBikesByIdsInBatch(List<Integer> ids);
+	String removeAllBikes();
+	String removeAllBikesInBatch();
+	
+	
+	
+}

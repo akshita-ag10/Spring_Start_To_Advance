@@ -1,0 +1,13 @@
+package com.akshita.service;
+
+import java.util.List;
+
+import com.akshita.model.Bike;
+
+public interface IBikeService {
+	
+	List<Bike> fetchByBrand(String brand);
+	List<Bike> fetchByModel(String model);
+	List<Bike> fetchByBrand(String br1, String br2);
+	List<Bike> fetchByPrice(Double minP, Double maxP);
+}

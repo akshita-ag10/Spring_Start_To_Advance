@@ -1,0 +1,72 @@
+package com.akshita.dao;
+
+import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.akshita.model.Bike;
+
+public interface IBikeRepo extends JpaRepository<Bike, Integer> {
+
+	//custom finder methods are for seraching only (as the name suggests - finder)
+	//for create, update and delete operations, if we want customization other than pre-defined methods we use custom queries
+	//we can use both SQL or HQL for writing the custom queries
+	//in case of using SQL, we have to set parameter nativeQuery=true //see last method.
+	
+	//now, just as Hibernate, Toplink etc follows (implements) JPA specifications
+	//similarly, HQL implements JPQL
+	
+	//SQL v/s HQL
+	//in SQL - we work with table_name and column_names
+	//in HQL - we work with className and fieldNames
+	//somewhat syntax is also diff
+	
+	//in custom queries, we need not to follow any naming pattern for method names
+	//spring jpa will be the one giving implementation of these methods in a proxy class with the help of HQL quries written
+	
+	//----------------------
+	//although we have custom finder methods for search operations
+	//here just for learning we are trying custom queries for finding/searching also
+	
+	@Query("FROM Bike WHERE brand = :brandName")
+	List<Bike> searchByBrand(String brandName); //the parameter in query ':brandName' and the parameter passed in method 'brandName' are matching then its ok,otherwise we have to use @Param in method parameters and specify the query param name there, see below eg.
+	
+	@Query("FROM Bike WHERE modelName = :modelll")
+	List<Bike> searchByModel(@Param("modelll")String model);
+	
+	@Query("FROM Bike WHERE brand IN (:br1, :br2) ")
+	List<Bike> searchByBrand(String br1, String br2);
+	
+	@Query("SELECT brand, modelName FROM Bike WHERE price BETWEEN :minP AND :maxP")
+	List<String> searchAllPriceInRange(Double minP, Double maxP);
+	
+	
+	//for update, create or delete queries we need to use @Transactional and @Modifying annotations
+	//when we use pre-defined del or update methods, these annotations are already there by spring
+	
+	//import springframework one, not jakarata one
+	@Transactional  //either whole transaction should occur or roll-back
+	@Modifying 		//we use this b/c we are modifying the database
+	@Query("UPDATE Bike SET price=:newPrice WHERE engine=:en")
+	int updatePriceByEngine(Double newPrice, String en);
+	
+	
+	@Transactional
+	@Modifying
+	@Query("DELETE FROM Bike WHERE modelName = :model")
+	//@Query(value = "DELETE FROM Bike WHERE modelName = :model") //this is the correct way, but since we are passing only 1 argument, mentioning argument name, i.e. 'value' here is optional
+	int deleteBikeByModel(String model);
+	//NOTE- while passing parameters in annotations, if only 1 param is being passed, writing param name is optional
+	//		but if you are passing more than 1 argument, names of both the params should be mentioned, see next method for eg.
+	
+	
+	//if you want to use SQL, set nativeQuery=true
+	@Transactional
+	@Modifying
+	@Query(value = "INSERT INTO bike (`id`, `brand`, `model_name`, `engine`, `price`) VALUES (?,?,?,?,?)", nativeQuery=true) //since using SQL, we need to set nativeQuery=true
+	int insertBikeInfo(Integer id, String brand, String model, String engine, Double Price);
+	
+}

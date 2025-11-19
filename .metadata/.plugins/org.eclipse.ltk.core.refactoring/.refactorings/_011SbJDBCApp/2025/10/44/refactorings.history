@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.akshita._011SbJDBCApp&apos; to &apos;com.akshita&apos;&#x0D;&#x0A;- Original project: &apos;_011SbJDBCApp&apos;&#x0D;&#x0A;- Original element: &apos;_011SbJDBCApp/src/main/java/com.akshita._011SbJDBCApp&apos;&#x0D;&#x0A;- Renamed element: &apos;_011SbJDBCApp/src/main/java/com.akshita&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.akshita._011SbJDBCApp&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.akshita._011SbJDBCApp" name="com.akshita" qualified="false" references="true" stamp="1761451395882" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,58 @@
+package com.akshita.service;
+
+import java.sql.Date;
+import java.sql.Timestamp;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.akshita.dao.IBikeRepo;
+import com.akshita.model.Bike;
+
+@Service
+public class BikeService implements IBikeService {
+	@Autowired
+	IBikeRepo repo;
+
+	@Override
+	public List<Bike> fetchByBrand(String brand) {
+		return repo.searchByBrand(brand);
+	}
+
+	@Override
+	public List<Bike> fetchByModel(String model) {
+		return repo.searchByModel(model);
+	}
+
+	@Override
+	public List<Bike> fetchByBrand(String br1, String br2) {
+		return repo.searchByBrand(br1, br2);
+	}
+
+	@Override
+	public List<String> fetchByPrice(Double minP, Double maxP) {
+		return repo.searchAllPriceInRange(minP, maxP);
+	}
+
+	@Override
+	public int toUpdatePriceByEngine(Double newPrice, String en) {
+		return repo.updatePriceByEngine(newPrice, en);
+	}
+
+	@Override
+	public int toDeleteBikeByModel(String model) {
+		return repo.deleteBikeByModel(model);
+	}
+
+	@Override
+	public int toInsertBikeInfo(Integer id, String brand, String model, String engine, Double Price) {
+		return repo.insertBikeInfo(id, brand, model, engine, Price);
+	}
+
+	@Override
+	public Timestamp toGetCurrentDateTime() {
+		return repo.getCurrentDateTime();
+	}
+
+	
+
+}

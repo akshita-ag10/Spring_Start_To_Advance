@@ -1,0 +1,45 @@
+package com.akshita;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+
+import com.akshita.service.BikeService;
+
+@SpringBootApplication
+public class Application {
+
+	public static void main(String[] args) {
+		ConfigurableApplicationContext container = SpringApplication.run(Application.class, args);
+		
+		BikeService service = container.getBean(BikeService.class);
+		
+		service.fetchByPrice(210000).forEach(b->System.out.println());
+		System.out.println("__________________________________________");
+		
+		service.fetchByPriceIs(210000).forEach(b->System.out.println());
+		System.out.println("__________________________________________");
+		
+		service.fetchByPriceEquals(210000).forEach(b->System.out.println());
+		System.out.println("__________________________________________");
+		
+		service.fetchByPriceLessThan(210000).forEach(b->System.out.println());
+		System.out.println("__________________________________________");
+		
+		service.fetchByPriceBetween(150000, 205000).forEach(b->System.out.println(b));
+		System.out.println("__________________________________________");
+		
+		service.fetchByBrandEquals("Royal Enfield").forEach(b->System.out.println(b));
+		System.out.println("__________________________________________");
+		
+		List<String> brandNames= Arrays.asList("Jawa", "Royal Enfield");
+		service.fetchByBrandInAndPriceBetween(brandNames, 170000, 215000).forEach(b->System.out.println());;
+		System.out.println("__________________________________________");
+
+		
+	}
+
+}

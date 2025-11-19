@@ -1,0 +1,16 @@
+package service;
+
+public class Coaching {
+	private ICourse course;
+	public void setCourse(ICourse course) {
+		this.course = course;
+	}
+	public boolean getTheCourse(double amount) {
+		
+		JavaCourse jc = new JavaCourse();
+		
+		
+		return false;
+	}
+
+}

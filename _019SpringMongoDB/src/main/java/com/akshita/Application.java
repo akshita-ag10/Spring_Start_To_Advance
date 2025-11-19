@@ -1,0 +1,46 @@
+package com.akshita;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+
+import com.akshita.dto.StudentDTO;
+
+
+import com.akshita.service.StudentService;
+import com.akshita.utils.IdGenerator;
+
+@SpringBootApplication
+public class Application {
+
+	public static void main(String[] args) {
+		ConfigurableApplicationContext container = SpringApplication.run(Application.class, args);
+
+		StudentService service = container.getBean(StudentService.class);
+		
+//		StudentDTO sDTO = new StudentDTO();
+//		//we are not passing id here, b/c in mongo DB it is auto generated, we can also generate it according to our requirements - see below
+//		sDTO.setRoll(9548);
+//		sDTO.setName("Divij");
+//		sDTO.setCity("Gurugram");
+		
+		StudentDTO sDTO2  = new StudentDTO();
+		String id = IdGenerator.generateID();
+		sDTO2.setId(id);
+		sDTO2.setName("Chitvan");
+		//since it's noSQL database, we have documents and it's fine to have less attributes in diff documents
+		//if you will print sDTO2 obj it will print values for City and roll properties as null (b/c here it is printing java obj and not the db document)
+		//but in real db, there these 2 fields will only not be present in this document
+		
+		String res = service.registerStudentInfo(sDTO2);
+		System.out.println(res);
+		System.out.println("________________________________________________");
+		
+		service.findAllStudents().forEach(s->System.out.println(s));
+		System.out.println("________________________________________________");
+
+		String status = service.removeDocument("691cc70f6cf4814153de8dd4");
+		System.out.println(status);
+	}
+
+}

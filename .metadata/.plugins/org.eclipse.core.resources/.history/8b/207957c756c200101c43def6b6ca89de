@@ -1,0 +1,51 @@
+package com.akshita.service;
+
+import java.util.List;
+
+import com.akshita.model.Bike;
+
+public class BikeService implements IBikeService {
+
+	@Override
+	public List<Bike> findByPrice(Double p) {
+		
+		return null;
+	}
+
+	@Override
+	public List<Bike> findByPriceIs(Double p) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Bike> findByPriceEquals(Double p) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Bike> findByPriceLessThan(Double pl) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Bike> findByPriceBetween(Double minP, Double maxP) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Bike> findByBrandEquals(String brand) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Bike> findByBrandInAndPriceBetween(List<String> brands, Double minP, Double maxP) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

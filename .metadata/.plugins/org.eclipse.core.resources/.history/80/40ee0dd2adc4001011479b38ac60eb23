@@ -1,0 +1,31 @@
+package com.akshita.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.akshita.dto.StudentDTO;
+import com.akshita.model.Student;
+import com.akshita.repo.IStudentRepo;
+
+public class StudentService implements IStudentService {
+
+	@Autowired
+	private IStudentRepo repo;
+	
+	@Override
+	public String registerStudentInfo(StudentDTO dto) {
+		return null;
+	}
+
+	@Override
+	public List<Student> findAllStudents() {
+		return null;
+	}
+
+	@Override
+	public String removeDocument(String id) {
+		return null;
+	}
+
+}

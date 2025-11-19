@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Bike.java&apos; to &apos;_014SpringDataJPA-JPARepo/src/main/java/com.akshita.model&apos;&#x0D;&#x0A;- Original project: &apos;_013SpringDataJPAPagingAndSortingRepo&apos;&#x0D;&#x0A;- Destination element: &apos;_014SpringDataJPA-JPARepo/src/main/java/com.akshita.model&apos;&#x0D;&#x0A;- Original element: &apos;com.akshita.model.Bike.java&apos;" description="Copy compilation unit" destination="=_014SpringDataJPA-JPARepo/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.akshita.model" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.akshita.model{Bike.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1762702516352" units="1" version="1.0"/>
+</session>

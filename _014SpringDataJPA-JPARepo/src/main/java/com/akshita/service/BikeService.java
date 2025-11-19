@@ -1,0 +1,83 @@
+package com.akshita.service;
+
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
+import org.springframework.stereotype.Service;
+import com.akshita.dao.IBikeRepo;
+import com.akshita.model.Bike;
+
+@Service
+public class BikeService implements IBikeService{
+
+	@Autowired
+	IBikeRepo repo;
+
+	@Override
+	public Bike searchBikeById(Integer id) {		
+		return repo.getReferenceById(id);			
+	}
+
+	@Override
+	public List<Bike> searchBikesByIds(Iterable<Integer> ids) {
+		return repo.findAllById(ids); // this is from ListCrudRepo
+	}
+
+	@Override
+	public List<Bike> searchBikesByBike(Bike bike) {
+		Example<Bike> eg = Example.of(bike);
+		List<Bike> bikes = repo.findAll(eg);
+		
+		return bikes;
+	}
+	
+	public void disp() {
+		repo.deleteAllById(null);//crudrepo
+		repo.deleteAllByIdInBatch(null);//jparepo
+		repo.deleteAll();
+		repo.deleteAllInBatch();
+		
+		
+	}
+
+	@Override
+	public String removeBikesByIds(List<Integer> ids) {
+		List<Bike> bikesInDb = repo.findAllById(ids);
+		if(bikesInDb.isEmpty()) {
+			return "no bikes are present with these ids";
+		}
+		repo.deleteAllById(ids);
+		return "bikes that existed from the list, have been deleted from db";
+	}
+
+	@Override
+	public String removeBikesByIdsInBatch(List<Integer> ids) {
+
+		List<Bike> bikesInDb = repo.findAllById(ids);
+		if(bikesInDb.size()>0) {
+			repo.deleteAllByIdInBatch(ids);
+			return "bikes that existed in db are deleted in BATCH";
+		}
+		return "no bikes are present with these ids";
+	}
+
+	@Override
+	public String removeAllBikes() {
+		Long countInDb = repo.count();
+		if(countInDb>0) {
+			repo.deleteAll();
+			return "All bikes from db are deleted";
+		}
+		return "db is already empty";
+	}
+
+	@Override
+	public String removeAllBikesInBatch() {
+		Long countInDb = repo.count();
+		if(countInDb > 0) {
+			repo.deleteAllInBatch();
+			return "All bikes are deleted in BATCH from db";
+		}
+		return "db was already empty";
+	}
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://www.springframework.org/schema/beans
+               https://www.springframework.org/schema/beans/spring-beans.xsd">
+               
+
+<bean id="java" class="com.akshita.service.JavaCourse"></bean>  <!-- the id specified here is the ref variable for the obj(bean) created by ioc container, if we don't specify it, it will by default take id as camel-case of class name -->              
+<bean id="sb" class="com.akshita.service.SpringBootCourse"></bean>
+<bean id="devOps" class="com.akshita.service.DevOpsCourse"></bean>
+
+<bean id="coach" class="com.akshita.service.Coaching">
+	<property ref="sb" name="course"></property> <!-- setter injection dominate constructor injection -->
+	<constructor-arg ref="java" name="course"></constructor-arg>
+</bean>
+</beans>

@@ -1,0 +1,44 @@
+package com.akshita.dao;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import com.akshita.model.Bike;
+
+public interface IBikeRepo extends JpaRepository<Bike, Integer> {
+
+	//custom finder methods are for seraching only (as the name suggests - finder)
+	//for create, update and delete operations, if we want customization other than pre-defined methods we use custom queries
+	//we will use HQL for writing the custom queries
+	
+	//now, just as Hibernate, Toplink etc follows (implements) JPA specifications
+	//similarly, HQL implements JPQL
+	
+	//SQL v/s HQL
+	//in SQL - we work with table_name and column_names
+	//in HQL - we work with className and fieldNames
+	//somewhat syntax is also diff
+	
+	//in custom queries, we need not to follow any naming pattern for method names
+	//spring jpa will be the one giving implementation of these methods in a proxy class with the help of HQL quries written
+	
+	//----------------------
+	//although we have custom finder methods for search operations
+	//here just for learning we are trying custom queries for finding/searching also
+	
+	@Query("FROM Bike WHERE brand = :brandName")
+	List<Bike> searchByBrand(String brandName); //the parameter in query ':brandName' and the parameter passed in method 'brandName' are matching then its ok,otherwise we have to use @Param in method parameters and specify the query param name there, see below eg.
+	
+	@Query("FROM Bike WHERE modelName = :modelll")
+	List<Bike> searchByModel(@Param("modelll")String model);
+	
+	@Query("FROM Bike WHERE brand IN (:br1, :br2) ")
+	List<Bike> searchByBrand(String br1, String br2);
+	
+	List<Bike> searchAllPriceInRange(Double minP, Double maxP);
+	
+	
+}

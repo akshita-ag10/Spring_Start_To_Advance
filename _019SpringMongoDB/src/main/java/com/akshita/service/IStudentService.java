@@ -1,0 +1,15 @@
+package com.akshita.service;
+
+import java.util.List;
+
+import com.akshita.dto.StudentDTO;
+import com.akshita.model.Student;
+
+public interface IStudentService {
+	
+	String registerStudentInfo(StudentDTO dto);
+	List<Student> findAllStudents();
+	String removeDocument(String id);
+	
+
+}

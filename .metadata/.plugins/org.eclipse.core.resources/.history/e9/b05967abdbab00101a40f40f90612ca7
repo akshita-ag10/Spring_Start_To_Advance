@@ -1,0 +1,28 @@
+import service.*;
+class Alpha{
+	public void disp() {
+		System.out.println("We need to have knowledge of DevOps, AWS, AI, Java Courses");
+	}	
+}
+class Beta //extends Alpha
+{
+	public void show() {
+//		Alpha a = new Alpha();
+//		a.disp();
+//		disp();
+		
+	}
+
+}
+
+
+public class LaunchApp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Coaching ch = new Coaching();
+		ch.setCourse(new DevOpsCourse());
+
+	}
+
+}

@@ -1,0 +1,46 @@
+package com.akshita;
+
+import java.security.Provider.Service;
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+
+import com.akshita.model.Bike;
+import com.akshita.service.BikeService;
+
+@SpringBootApplication
+public class Application {
+
+	public static void main(String[] args) {
+		ConfigurableApplicationContext container = SpringApplication.run(Application.class, args);
+		
+		BikeService service = container.getBean(BikeService.class);
+		
+//		Bike b1 = service.searchBikeById(102);
+//		System.out.println(b1);
+//		System.out.println("___________________________________________________________");
+//		
+//		Iterable<Integer> idss = Arrays.asList(102,103);
+//		service.searchBikesByIds(idss).forEach(b->System.out.println(b));
+//		System.out.println("____________________________________________________________");
+//		
+//		//here it searches all bikes in db with these details
+//		//since here we are using consturctor to create bike, here we are not passing ID 
+//		//so there can be more than 1 bike in db with these details so it will give all in list format
+//		service.searchBikesByBike(new Bike("Honda", "CB350", "348cc", 215000.0)).forEach(b->System.out.println(b));
+//		System.out.println("____________________________________________________________");
+		
+//		List<Integer> idsToBeDel = Arrays.asList(102,103);
+//		System.out.println(service.removeBikesByIds(idsToBeDel));
+//		
+//		List<Integer> idsToBeDel2 = Arrays.asList(104,105);
+//		System.out.println(service.removeBikesByIdsInBatch(idsToBeDel2));
+		
+		System.out.println(service.removeAllBikes());
+
+	}
+
+}
