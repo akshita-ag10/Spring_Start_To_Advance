@@ -35,7 +35,6 @@ INDEX VERSION 1.134+D:\Studies\Java - Telusko\Spring_Start_To_Advance\.metadata\
 1056269700.index
 1464245383.index
 3109168865.index
-270172712.index
 3567043918.index
 132938512.index
 210679613.index
