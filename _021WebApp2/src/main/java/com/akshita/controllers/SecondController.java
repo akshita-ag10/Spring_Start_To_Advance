@@ -13,5 +13,6 @@ public class SecondController {
 	public String disp(Model model) {
 		model.addAttribute("message", "Let's Learn Apptitude - Second Controller");
 		return "index";
+		
 	}
 }
