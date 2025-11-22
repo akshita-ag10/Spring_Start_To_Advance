@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class FirstController {
 
 	//there are 4 ways to do the below thing
+	//see other ways in the following applications - _021, _022 etc.
 	
 	@RequestMapping("/home")
 	public ModelAndView displayInfo() {
