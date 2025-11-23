@@ -1,7 +1,0 @@
-package com.akshita.dao;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
-public interface IBikeRepo extends JpaRepository<T, ID> {
-
-}
