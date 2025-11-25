@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class QueryParamController {
 
 	//the variable inside @Request Param is the key, in url it should be like ?naam=Rohit , key in queryparam and this should match
+	//http://localhost:8080/user-info?naam=Akshita
 	@GetMapping("/user-info")
 	public String getSomeData(@RequestParam("naam")String n, Model model) {
 		model.addAttribute("name", n); //this "name" is used to access the data in it in model object on jsp page, as we were doing earlier
@@ -16,6 +17,7 @@ public class QueryParamController {
 	}
 	
 	//we can pass multiple query parameters
+	//http://localhost:8080/user-info?naam=Akshita&cor=Resoning
 	@GetMapping("/user-info2")
 	public String getSomeData2(@RequestParam("naam")String n, @RequestParam("cor")String c, Model model) {
 		model.addAttribute("name", n);
@@ -24,6 +26,7 @@ public class QueryParamController {
 	}
 	
 	//if you do not specify the @RequestParam var then the key passed in url should match the var name i.e. "c" here
+	//http://localhost:8080/user-info?naam=Akshita&c=Resoning
 	@GetMapping("/user-info3")
 	public String getSomeData3(@RequestParam("naam")String n, String c, Model model) {
 		model.addAttribute("name", n);
