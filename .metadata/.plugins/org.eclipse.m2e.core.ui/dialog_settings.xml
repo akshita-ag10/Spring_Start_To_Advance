@@ -6,6 +6,7 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="D:\Studies\Java - Telusko\Spring_Start_To_Advance\_034JacksonAppp2"/>
 			<item value="D:\Studies\Java - Telusko\Spring_Start_To_Advance\_034JacksonApp2"/>
 			<item value="D:\Studies\Java - Telusko\Spring_Start_To_Advance\_033JacksonApp1\src\main\java"/>
 			<item value="D:\Studies\Java - Telusko\Spring_Start_To_Advance\_033JacksonApp1"/>
@@ -57,10 +58,13 @@
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="com.akshita"/>
 		</list>
 		<list key="name">
+			<item value="_034JacksonApp2"/>
 		</list>
 		<list key="artifactId">
+			<item value="_034JacksonApp2"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

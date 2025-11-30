@@ -1,0 +1,18 @@
+[ {
+  "aId" : 1,
+  "aName" : "Akshita",
+  "aCity" : "Pune"
+}, {
+  "aId" : 2,
+  "aName" : "Aadhya",
+  "aCity" : "Meerut",
+  "aCountry" : "India"
+}, {
+  "aId" : 3,
+  "aName" : "Megha",
+  "aCity" : "Shillong"
+}, {
+  "aId" : 4,
+  "aName" : "Priyansh",
+  "aCity" : "Dehli"
+} ]
