@@ -6340,6 +6340,7 @@ java.lang.IllegalArgumentException: Argument not valid
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2025-11-30 02:39:54.379
 !MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+<<<<<<< HEAD
 !SESSION 2025-11-30 08:15:45.567 -----------------------------------------------
 eclipse.buildId=4.25.0.202409101855
 java.version=21.0.4
@@ -11633,3 +11634,5 @@ org.eclipse.jface.text.BadLocationException: 821
 
 !ENTRY org.springframework.tooling.boot.ls 1 0 2025-11-30 21:21:08.640
 !MESSAGE Classpath changed for project: _033JacksonApp1
+=======
+>>>>>>> parent of 70f4418 (Add _032, JSON to Java Object)
