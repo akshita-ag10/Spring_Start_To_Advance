@@ -49,5 +49,7 @@ public class StudentController {
 	//case 2 - if some field is not passed, like value for age field is not passed from JSON
 	//then in java object it will store it as age=null or age=0 if primitvie datatype
 	
+	//case 3 - to make a particular field compulsory to add in request body
+	//we may use some annotation to make a particular filed compulsory
 	
 }
