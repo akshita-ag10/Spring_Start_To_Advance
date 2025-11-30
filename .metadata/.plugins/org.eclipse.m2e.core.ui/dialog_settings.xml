@@ -6,6 +6,12 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="D:\Studies\Java - Telusko\Spring_Start_To_Advance\_034JacksonApp2"/>
+			<item value="D:\Studies\Java - Telusko\Spring_Start_To_Advance\_033JacksonApp1\src\main\java"/>
+			<item value="D:\Studies\Java - Telusko\Spring_Start_To_Advance\_033JacksonApp1"/>
+			<item value="D:\Studies\Java - Telusko\Spring_Start_To_Advance\"/>
+			<item value="D:\Studies\Java - Telusko\Spring_Start_To_Advance\_019SpringMongoDB"/>
+			<item value="D:\Studies\Java - Telusko\Spring_Start_To_Advance\_34JacksonApp2"/>
 			<item value="D:\Studies\Projects\SpringAIProject"/>
 			<item value="D:\Studies\Projects\_003Annotation2\src\main\java\model\SpringBootCourse.java"/>
 			<item value="D:\Studies\Java - Telusko\Spring\_001App1\src\main\java\com\akshita\main\LaunchLazyContainer.java"/>
@@ -20,6 +26,7 @@
 		</list>
 	</section>
 	<section name="MavenProjectWizardArchetypePage">
+		<item key="catalog" value="All Catalogs"/>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
 			<item value="[artifactId]-TRUNK"/>

@@ -39,7 +39,6 @@
     <fullyQualifiedTypeName name="org.springframework.data.domain.Sort.Direction"/>
     <fullyQualifiedTypeName name="org.springframework.data.domain.PageRequest"/>
     <fullyQualifiedTypeName name="java.security.Provider.Service"/>
-    <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="com.akshita.view.ResultView3"/>
     <fullyQualifiedTypeName name="org.springframework.beans.BeanUtils"/>
     <fullyQualifiedTypeName name="com.akshita.service.StudentService"/>
@@ -49,4 +48,6 @@
     <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
     <fullyQualifiedTypeName name="com.akshita.model.Course"/>
     <fullyQualifiedTypeName name="jakarta.persistence.GenerationType"/>
+    <fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
 </qualifiedTypeNameHistroy>
