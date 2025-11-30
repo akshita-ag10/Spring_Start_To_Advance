@@ -472,6 +472,7 @@ java.util.concurrent.TimeoutException
 	at org.springframework.tooling.jdt.ls.commons.classpath.SendClasspathNotificationsJob.flush(SendClasspathNotificationsJob.java:178)
 	at org.springframework.tooling.jdt.ls.commons.classpath.SendClasspathNotificationsJob.run(SendClasspathNotificationsJob.java:149)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+<<<<<<< HEAD
 
 !ENTRY org.eclipse.ui 4 0 2025-11-30 01:55:12.274
 !MESSAGE Unhandled event loop exception
@@ -11627,3 +11628,8 @@ org.eclipse.jface.text.BadLocationException: 821
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2025-11-30 20:38:48.426
 !MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+=======
+>>>>>>> parent of cc01c58 (Add _033, JavaObj to JSON)
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2025-11-30 21:21:08.640
+!MESSAGE Classpath changed for project: _033JacksonApp1
