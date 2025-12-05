@@ -9,4 +9,5 @@
     <typeInfo handle="=_022WebApp3/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.akshita.service{IGreetingService.java[IGreetingService" modifiers="513" timestamp="1763820145737"/>
     <typeInfo handle="=AptitudeApp/C:\/Users\/HP\/.m2\/repository\/org\/springframework\/data\/spring-data-jpa\/3.5.6\/spring-data-jpa-3.5.6.jar=/maven.pomderived=/true=/=/maven.groupId=/org.springframework.data=/=/maven.artifactId=/spring-data-jpa=/=/maven.version=/3.5.6=/=/maven.scope=/compile=/=/maven.pomderived=/true=/&lt;org.springframework.data.jpa.repository(JpaRepository.class[JpaRepository" modifiers="1537" timestamp="1764260227629"/>
     <typeInfo handle="=_031RestAPIApp1/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.akshita.service{IGreetings.java[IGreetings" modifiers="513" timestamp="1764428469664"/>
+    <typeInfo handle="=_036JUnit5ForControllerMethods/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.akshita.service{IStudentService.java[IStudentService" modifiers="513" timestamp="1764821850626"/>
 </typeInfoHistroy>
