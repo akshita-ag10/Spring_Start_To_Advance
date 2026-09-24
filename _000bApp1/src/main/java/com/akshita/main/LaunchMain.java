@@ -14,8 +14,8 @@ public class LaunchMain {
 		System.out.println("hello");
 		container = new ClassPathXmlApplicationContext("applicationConfig.xml");
 		
-		Coaching ch = container.getBean(Coaching.class);
-		
+		Coaching ch = container.getBean(Coaching.class);	
+			
 	}
 
 }

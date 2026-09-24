@@ -21,11 +21,13 @@ class Beta //extends Alpha
 public class LaunchApp {
 
 	public static void main(String[] args) {
+
+
 		// TODO Auto-generated method stub
 		Coaching ch = new Coaching(); //creating target class object, this will also be handled by Spring
 		ch.setCourse(new DevOpsCourse()); //setter injection (dependency injection)
 		boolean status = ch.getTheCourse(7676);
-		
+
 		if(status)
 			System.out.println("success");
 		else

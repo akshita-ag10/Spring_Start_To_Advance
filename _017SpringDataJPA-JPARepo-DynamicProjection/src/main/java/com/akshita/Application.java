@@ -23,7 +23,7 @@ public class Application {
 		rv1.forEach(rv -> System.out.println(rv.getId() + " : " + rv.getPrice()));
 		
 		service.findByPriceLessThan(210000, ResultView2.class).forEach(rv->System.out.println(rv.getBrand() + ", " + rv.getModelName() + " : " + rv.getPrice()));;
-	
+		System.out.println("**********************************************");
 		service.findByPriceLessThan(210000, ResultView3.class).forEach(rv->System.out.println(rv.getBrand() + " - " + rv.getModelName() + " - " + rv.getEngine()));;
 	
 		//NOTE - if you see the sql queries in the output in console

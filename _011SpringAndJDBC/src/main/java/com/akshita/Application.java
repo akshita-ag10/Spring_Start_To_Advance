@@ -21,7 +21,7 @@ public class Application {
 	
 		
 		EmployeeRepo2 empRepo2 = container.getBean(EmployeeRepo2.class);
-		Employee e = new Employee(12, "Bheem", "Dholkapur");
+		Employee e = new Employee(112, "Bheem", "Dholkapur");
 		empRepo2.inputEmp(e);
 		
 		

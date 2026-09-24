@@ -11,8 +11,8 @@
     <bean id="devops" class="com.akshita.service.DevOpsCourse"></bean>
     
     <bean id="coach" class="com.akshita.service.Coaching">
-    	<property ref="devops" name="course"></property>
-    	<constructor-arg ref="spring" name ="course"></constructor-arg>
+    	<property ref="devops" name="course"></property> <!--setter injection-->
+    	<constructor-arg ref="spring" name ="course"></constructor-arg> <!--contructor injection-->
     </bean>
     
 

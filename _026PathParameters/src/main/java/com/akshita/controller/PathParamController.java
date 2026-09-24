@@ -13,7 +13,7 @@ public class PathParamController {
 	//query parameters are at the end of the url being send
 	//unlike that, path parameter can be anywhere in the url
 	
-	//http://localhost:8080/user-info/Akshita
+	//http://localhost:8080/user-info1/Akshita
 	@GetMapping("/user-info1/{naam}")
 	public String getSomeData(@PathVariable("naam")String name,Model model) {
 		model.addAttribute("name", name);

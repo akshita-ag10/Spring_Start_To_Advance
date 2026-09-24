@@ -12,6 +12,10 @@ public class BikeService implements IBikeService{
 
 	@Autowired
 	IBikeRepo repo;
+	
+	public List<Bike> searchAllBikes(){
+		return repo.findAll();
+	}
 
 	@Override
 	public Bike searchBikeById(Integer id) {		

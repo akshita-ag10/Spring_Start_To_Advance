@@ -24,6 +24,7 @@ public class LaunchApp {
 
 		Coaching ch = container.getBean(Coaching.class);
 //		System.out.println("hi");
+//		ch.buyTheCourse(9000.0);
 	}
 	
 	

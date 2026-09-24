@@ -6,6 +6,7 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="D:\Studies\Java - Telusko\Spring_Start_To_Advance\_036JUnit5ForControllerMethods\pom.xml"/>
 			<item value="D:\Studies\Java - Telusko\Spring_Start_To_Advance\_034JacksonApp2"/>
 			<item value="D:\Studies\Java - Telusko\Spring_Start_To_Advance\_034JacksonAppp2"/>
 			<item value="D:\Studies\Java - Telusko\Spring_Start_To_Advance\_033JacksonApp1\src\main\java"/>
@@ -61,10 +62,10 @@
 			<item value="com.akshita"/>
 		</list>
 		<list key="name">
-			<item value="_034JacksonApp2"/>
+			<item value="OopsPractice"/>
 		</list>
 		<list key="artifactId">
-			<item value="_034JacksonApp2"/>
+			<item value="OopsPractice"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -80,6 +81,7 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="D:\Studies\Java - Telusko\Spring_Start_To_Advance\_037TouristRestAPI"/>
 			<item value="D:\Studies\Java - Telusko\Spring_Start_To_Advance\_020WebApp1"/>
 		</list>
 		<list key="projectNameTemplate">

@@ -12,6 +12,7 @@ public interface IBikeService {
 
 	Iterable<Bike> fetchBikesInPagesStatic(int pageNum, int pageSize);
 	//here, in static one, it just display single page that is the one according to page number
+	//page numbers start from 0
 	
 	void fetchBikesInPagesDynamic(int pageSize);
 	//if you want all the pages

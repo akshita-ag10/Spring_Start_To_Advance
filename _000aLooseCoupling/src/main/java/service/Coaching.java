@@ -10,7 +10,7 @@ public class Coaching {
 		
 //		JavaCourse jc = new JavaCourse();
 //		jc.buyTheCourse(55);
-		
+
 		return course.buyTheCourse(amount);
 		
 		

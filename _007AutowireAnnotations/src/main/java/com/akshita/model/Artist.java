@@ -38,8 +38,7 @@ public class Artist {
 	}
 	
 	public boolean chooseColors() {
-		return col.paint();
-		
+		return col.paint();		
 	}
 	
 

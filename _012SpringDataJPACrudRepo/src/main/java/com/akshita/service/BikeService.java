@@ -11,7 +11,7 @@ import com.akshita.model.Bike;
 public class BikeService implements IBikeService{
 
 	@Autowired
-	IBikeRepo repo ;
+	IBikeRepo repo;
 
 	@Override
 	public Bike registerBike(Bike bike) {

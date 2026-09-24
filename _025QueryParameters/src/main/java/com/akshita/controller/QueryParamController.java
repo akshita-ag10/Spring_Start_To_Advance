@@ -12,7 +12,7 @@ public class QueryParamController {
 	//http://localhost:8080/user-info?naam=Akshita
 	@GetMapping("/user-info")
 	public String getSomeData(@RequestParam("naam")String n, Model model) {
-		model.addAttribute("name", n); //this "name" is used to access the data in it in model object on jsp page, as we were doing earlier
+		model.addAttribute("name", "hello " + n); //this "name" is used to access the data in it in model object on jsp page, as we were doing earlier
 		return "userInfoPage";
 	}
 	

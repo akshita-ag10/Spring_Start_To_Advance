@@ -14,7 +14,6 @@ public class LaunchApp {
 		boolean result = a1.paintNow();
 		System.out.println(result);
 		System.out.println(a1);
-	}
-	
+	}	
 
 }

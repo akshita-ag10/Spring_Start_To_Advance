@@ -37,6 +37,7 @@
 <!-- in metadata see , p is property (setter injection) and c is constructor (constructor injection)
 these are just ref variable, hence we can use anything else also -->	
 	<!--  <bean id="artist1" class="com.akshita.model.Artist" p:name="Akshita" p:age="23" ></bean>-->
+	
 
 </beans>
                

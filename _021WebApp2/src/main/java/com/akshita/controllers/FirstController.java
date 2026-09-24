@@ -50,9 +50,9 @@ public class FirstController {
 //		return "First controller is Working";
 //	}
 //	
-//	@PostConstruct
-//	public void init() {
-//	    System.out.println(">>> FirstController Loaded <<<");
-//	}
+	@PostConstruct
+	public void init() {
+	    System.out.println(">>> FirstController Loaded <<<");
+	}
 	
 }

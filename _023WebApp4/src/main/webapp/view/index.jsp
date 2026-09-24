@@ -61,9 +61,9 @@
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link active" href="/greetingsapp/home">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="/home">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Tests</a></li>
-        <li class="nav-item"><a class="nav-link" href="/greetingsapp/books">Books</a></li>
+        <li class="nav-item"><a class="nav-link" href="/books">Books</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
       </ul>
     </div>

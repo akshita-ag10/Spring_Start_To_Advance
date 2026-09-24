@@ -19,13 +19,16 @@ public class Application {
 		
 		BikeService service = container.getBean(BikeService.class);
 		
-		Bike b1 = service.searchBikeById(102);
-		System.out.println(b1);
-		System.out.println("___________________________________________________________");
+		List<Bike> allBikes = service.searchAllBikes();
+		allBikes.forEach(b -> System.out.println(b));
 		
-		Iterable<Integer> idss = Arrays.asList(102,103);
-		service.searchBikesByIds(idss).forEach(b->System.out.println(b));
-		System.out.println("____________________________________________________________");
+//		Bike b1 = service.searchBikeById(102);
+//		System.out.println(b1);
+//		System.out.println("___________________________________________________________");
+//		
+//		Iterable<Integer> idss = Arrays.asList(102,103);
+//		service.searchBikesByIds(idss).forEach(b->System.out.println(b));
+//		System.out.println("____________________________________________________________");
 		
 		//here it searches all bikes in db with these details
 		//since here we are using consturctor to create bike, here we are not passing ID 

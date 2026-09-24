@@ -69,9 +69,5 @@ public class Bike {
 		return "Bike [id=" + id + ", brand=" + brand + ", modelName=" + modelName + ", engine=" + engine + ", price="
 				+ price + "]";
 	}
-	
-	 
-	
-	
 
 }

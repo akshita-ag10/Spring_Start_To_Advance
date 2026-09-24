@@ -42,8 +42,8 @@ public class Application {
 		System.out.println(b);
 		System.out.println(service.fetchBikeById2(8)); 
 		
-		System.out.println("Fetching bikes with ids 2,3,4");
-		Iterable<Integer> ids = Arrays.asList(2,3,4);
+		System.out.println("Fetching bikes with ids 1,2,3,4");
+		Iterable<Integer> ids = Arrays.asList(1,2,3,4);
 		Iterable<Bike> bs = service.fetchMultipleBikesByIds(ids);
 		bs.forEach(bi->System.out.println(bi));
 		

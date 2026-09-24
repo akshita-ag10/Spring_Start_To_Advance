@@ -7,11 +7,11 @@ import com.akshita.config.Password;
 //INTERVIEW QUESTIONS
 //@Controller v/s @RestController
 
-//1. Stereotype Annotations - Annotations that are for class, when we write these annotations on any class, spirng will createt the object of that class for us
+//1. Stereotype Annotations - Annotations that are for class, when we write these annotations on any class, spirng will create the object of that class for us
 //@Component - spring will create bean for the class,// id of bean : either specify it or spring will use camel-case of class name
 //@Controller , @RestController, @Service, @Repository - all these annotations are @Component + some special feature
 //@Controller, @RestController = @Component + Its weblogic
-//@Service = @Component + Its business login
+//@Service = @Component + Its business logic
 //@Repository = @Component + Its Dao logic
 
 //2.

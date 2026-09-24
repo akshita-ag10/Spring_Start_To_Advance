@@ -24,7 +24,7 @@ public class FirstController {
 	//We can use any of the RequestMapping or Get/PostetcMapping at method level
 	//But recommnded one is Get/PostMapping at method level
 	
-	//At class level, (i.e. where we have written @Controller annotation), we have to use RequestMapping only, there Get/Post etc don't work
+	//At class level, (i.e. where we have written @Controller annotation), we have to use RequestMapping only, there Get/Post etc can work but we don't use
 	//When we have multiple controllers then we have to use class level mapping to specify which controller the request should go to, 
 	//and then the following url path identifies that to which method of this controller the request should go to 
 	

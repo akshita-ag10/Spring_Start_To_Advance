@@ -15,8 +15,7 @@ public class GreetingsApplication {
 		GenerateGreetings ServiceGG = container.getBean(GenerateGreetings.class);
 		
 		String res = ServiceGG.getGreetings("Madam Ji");
-		System.out.println(res);
-		
+		System.out.println(res);	
 		
 		
 	}

@@ -45,19 +45,20 @@ public class GreetingController {
 		return "profile";
 	}
 	
-	//giving error, not sure why
-//	@GetMapping("/profile")
-//	public void greet4(Map<String, String> map) {
-//		map.put("greet", service.letsGreet("Dinesh"));
-//	}	//here we are not returning any view name, in such case the url end point should match with view name
-	
-	//giving error, not sure why
 	@GetMapping("/profile")
-	public Map<String, String> greet5(){
-		Map<String , String> map = new HashMap();
-		map.put("greet", service.letsGreet("Esha"));
-		return map;
-	}	//again, here we are not returning any view name, in such case the url end point should match with view name
+	public void greet4(Map<String, String> map) {
+		map.put("greet", service.letsGreet("Dinesh"));
+	}	//here we are not returning any view name, in such case the url end point should match with view name
+	
+
+//	@GetMapping("/profile")
+//	public Map<String, String> greet5(){
+//		Map<String , String> map = new HashMap();
+//		map.put("greet", service.letsGreet("Esha"));
+//		return map;
+//	}	//again, here we are not returning any view name, in such case the url end point should match with view name
+		//also here we are returning the whole map which have greet
+	
 	
 	@GetMapping("/greet6")
 	public void greet6(HttpServletResponse resp) throws IOException { 
