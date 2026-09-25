@@ -20,7 +20,7 @@ public class RegistrationController {
 	//here the data in model and view can only be processed in java application, that is why here we can only use either jsp or thymeleaf
 	
 	@GetMapping("/register")
-	public String registerStudent(Model m) {
+	public String registerStudent() {
 		return "register";
 	}
 	
