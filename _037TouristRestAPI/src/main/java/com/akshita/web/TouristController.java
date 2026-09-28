@@ -19,13 +19,18 @@ import java.util.*;
 
 //so we have AOP for this
 //here comes in picture - SEPARATION OF CONCERNS
-//we create advice layer, when ever exception come in service layer method, it autmatically goes to advice layer  and is handled in advice layer
+//exception handling, security etc are the secondary functionality of an application
+//primary functionality is what an application is doing, like business requirements
+//to separate the primary and secondary functionality of an application, SEPARATION OF CONCERNS comes into picture, i.e. AOP
+//we create advice layer, when ever exception come in service layer method, it automatically goes to advice layer  and is handled in advice layer
 //(we don't make call to advice layer exception handling methods, it is redirected to advice layer automatically when exception occurs) 
-//and response after handling the exception goes from advice layer to dispatcher servlet (skipping the controller)
+//and response after handling the exception goes from advice layer to dispatcher servelet (skipping the controller)
 //so we call service layer method, 
-//if everything is fine, response come from service to controller and then goes to dispatcher servlet, which passes it client
-//if exception occurs in service layer method, it automatically goes to advice layer where it is handled and response is given to dispatcher servlet directly
+//if everything is fine, response come from service to controller and then goes to dispatcher servelet, which passes it client
+//if exception occurs in service layer method, it automatically goes to advice layer where it is handled and response is given to dispatcher servelet directly
 //the class in advice layer that handles need to annotated with @RestControllerAdvice so that is acts as an alternate of controller when exception occurs
+//so instead of writing repeated try-catch in every controller, we would have a separate advice controller that would handle exceptions
+//hence known as GLOBAL EXCEPITON HANDLING
 
 //so now see _038TouristAppAPI for this, we would be actually using this app for backend api calls
 //b/c _037 has shitty coding.
