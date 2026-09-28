@@ -27,7 +27,8 @@ public class LaunchApp {
 	
 		//to do the same in springboot application , i.e. to ignore the extra parameters provided by user, 
 		//see _032REstAPIApp2
-	
+		//since it's springboot application, it automatically manages that and does not give error, we need not to use any @JsonIgnore etc annotaion in model class
+		
 	}	
 	
 

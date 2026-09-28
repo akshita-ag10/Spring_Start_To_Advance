@@ -18,6 +18,9 @@ import com.akshita.model.Student;
 //to enable other endpoint we need to add properties in our application.properties file
 
 
+//in postman -  GET + http://localhost:8080/actuator
+//it will give all live actuator endpoints
+
 @RestController
 public class StudentController {
 
