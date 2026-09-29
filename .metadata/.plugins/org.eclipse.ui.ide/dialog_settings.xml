@@ -42,6 +42,8 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="D:\Studies\Java - Telusko\Spring_Start_To_Advance\_029crmWebApp"/>
+			<item value="D:\Studies\Java - Telusko\Spring_Start_To_Advance"/>
 			<item value="D:\Studies\Projects\producer"/>
 			<item value="D:\Studies\Java - Telusko\Spring_Start_To_Advance\_000bApp1"/>
 			<item value="D:\Studies\Java - Telusko\Spring_Start_To_Advance\_000aLooseCoupling"/>

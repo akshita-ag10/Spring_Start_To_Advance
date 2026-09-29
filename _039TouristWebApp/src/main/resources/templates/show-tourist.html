@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tourist Details</title>
+</head>
+
+<body>
+
+    <h1>Tourist Details</h1>
+
+    <p>
+        ID:
+        <span th:text="${tourist.id}"></span>
+    </p>
+
+    <p>
+        Name:
+        <span th:text="${tourist.name}"></span>
+    </p>
+
+    <p>
+        City:
+        <span th:text="${tourist.city}"></span>
+    </p>
+
+    <p>
+        Package Type:
+        <span th:text="${tourist.packageType}"></span>
+    </p>
+
+    <p>
+        Budget:
+        <span th:text="${tourist.budget}"></span>
+    </p>
+
+    <br>
+
+    <a th:href="@{/tourists}">View All Tourists</a>
+
+</body>
+
+</html>

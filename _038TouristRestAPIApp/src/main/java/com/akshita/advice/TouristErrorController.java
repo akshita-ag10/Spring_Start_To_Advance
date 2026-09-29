@@ -25,10 +25,10 @@ public class TouristErrorController {
 	//since we have only exception for tourist in this application we are handling only that here 
 	//and always handle one generic exception, if in case some unforseen excpeiton occur, we don't want our application stop abruptly
 	
-	@ExceptionHandler(Exception.class)
-	public ResponseEntity<ErrorDetail> handleException(Exception e){
-		ErrorDetail ed = new ErrorDetail("SERVER_ERROR", e.getMessage(), LocalDateTime.now());
-		return new ResponseEntity<ErrorDetail>(ed, HttpStatus.INTERNAL_SERVER_ERROR);
-	}
+//	@ExceptionHandler(Exception.class)
+//	public ResponseEntity<ErrorDetail> handleException(Exception e){
+//		ErrorDetail ed = new ErrorDetail("SERVER_ERROR", e.getMessage(), LocalDateTime.now());
+//		return new ResponseEntity<ErrorDetail>(ed, HttpStatus.INTERNAL_SERVER_ERROR);
+//	}
 
 }

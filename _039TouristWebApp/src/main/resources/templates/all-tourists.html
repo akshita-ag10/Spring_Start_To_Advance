@@ -1,0 +1,468 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>All Tourists</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 25px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        input, select {
+            padding: 7px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 7px 12px;
+            margin: 3px;
+            cursor: pointer;
+        }
+
+        .section {
+            margin-top: 35px;
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Tourist Management</h1>
+
+
+    <!-- ========================= -->
+    <!-- ADD NEW TOURIST -->
+    <!-- ========================= -->
+
+    <div class="section">
+
+        <h2>Add New Tourist</h2>
+
+        <form th:action="@{/add-tourist}" method="post">
+
+            <input type="text"
+                   name="name"
+                   placeholder="Name"
+                   required>
+
+            <input type="text"
+                   name="city"
+                   placeholder="City"
+                   required>
+
+            <input type="text"
+                   name="packageType"
+                   placeholder="Package Type"
+                   required>
+
+            <input type="number"
+                   name="budget"
+                   placeholder="Budget"
+                   step="0.01"
+                   required>
+
+            <button type="submit">
+                Add Tourist
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- ALL TOURISTS -->
+    <!-- ========================= -->
+
+    <div class="section">
+
+        <h2>All Tourists</h2>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>City</th>
+                    <th>Package Type</th>
+                    <th>Budget</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr th:each="tourist : ${tourists}">
+
+                    <td th:text="${tourist.id}"></td>
+
+                    <td th:text="${tourist.name}"></td>
+
+                    <td th:text="${tourist.city}"></td>
+
+                    <td th:text="${tourist.packageType}"></td>
+
+                    <td th:text="${tourist.budget}"></td>
+
+                    <td>
+
+                        <!-- VIEW -->
+                        <a th:href="@{/tourists/{id}(id=${tourist.id})}">
+                            <button type="button">
+                                View
+                            </button>
+                        </a>
+
+
+                        <!-- UPDATE -->
+                        <button type="button"
+                                th:attr="onclick=|updateTourist(${tourist.id})|">
+                            Update
+                        </button>
+
+
+                        <!-- UPDATE BUDGET -->
+                        <button type="button"
+                                th:attr="onclick=|updateBudget(${tourist.id})|">
+                            Update Budget
+                        </button>
+
+
+                        <!-- DELETE -->
+                        <button type="button"
+                                th:attr="onclick=|deleteTourist(${tourist.id})|">
+                            Delete
+                        </button>
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- UPDATE TOURIST FORM -->
+    <!-- ========================= -->
+
+    <div class="section">
+
+        <h2>Update Tourist</h2>
+
+        <form id="updateForm">
+
+            <input type="number"
+                   id="updateId"
+                   placeholder="Tourist ID"
+                   required>
+
+            <input type="text"
+                   id="updateName"
+                   placeholder="Name"
+                   required>
+
+            <input type="text"
+                   id="updateCity"
+                   placeholder="City"
+                   required>
+
+            <input type="text"
+                   id="updatePackageType"
+                   placeholder="Package Type"
+                   required>
+
+            <input type="number"
+                   id="updateBudget"
+                   placeholder="Budget"
+                   step="0.01"
+                   required>
+
+            <button type="submit">
+                Update Tourist
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- UPDATE BUDGET FORM -->
+    <!-- ========================= -->
+
+    <div class="section">
+
+        <h2>Update Budget</h2>
+
+        <form id="budgetForm">
+
+            <input type="number"
+                   id="budgetId"
+                   placeholder="Tourist ID"
+                   required>
+
+            <input type="number"
+                   id="newBudget"
+                   placeholder="New Budget"
+                   step="0.01"
+                   required>
+
+            <button type="submit">
+                Update Budget
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ========================= -->
+
+    <script>
+
+        // =========================
+        // UPDATE TOURIST - PUT
+        // =========================
+
+        function updateTourist(id) {
+
+            const name = prompt("Enter new name:");
+            if (name === null) return;
+
+            const city = prompt("Enter new city:");
+            if (city === null) return;
+
+            const packageType = prompt("Enter new package type:");
+            if (packageType === null) return;
+
+            const budget = prompt("Enter new budget:");
+            if (budget === null) return;
+
+
+            const tourist = {
+                id: id,
+                name: name,
+                city: city,
+                packageType: packageType,
+                budget: parseFloat(budget)
+            };
+
+
+            fetch("/update-tourist", {
+
+                method: "PUT",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify(tourist)
+
+            })
+            .then(response => {
+
+                if (response.ok) {
+                    alert("Tourist updated successfully!");
+                    location.reload();
+                } else {
+                    alert("Failed to update tourist.");
+                }
+
+            })
+            .catch(error => {
+                console.error(error);
+                alert("Error while updating tourist.");
+            });
+        }
+
+
+        // =========================
+        // UPDATE BUDGET - PATCH
+        // =========================
+
+        function updateBudget(id) {
+
+            const newBudget =
+                prompt("Enter new budget:");
+
+            if (newBudget === null) return;
+
+
+            fetch("/udpate-budget/" + id + "/" + newBudget, {
+
+                method: "PATCH"
+
+            })
+            .then(response => {
+
+                if (response.ok) {
+                    alert("Budget updated successfully!");
+                    location.reload();
+                } else {
+                    alert("Failed to update budget.");
+                }
+
+            })
+            .catch(error => {
+                console.error(error);
+                alert("Error while updating budget.");
+            });
+        }
+
+
+        // =========================
+        // DELETE TOURIST
+        // =========================
+
+        function deleteTourist(id) {
+
+            const confirmDelete =
+                confirm("Are you sure you want to delete tourist " + id + "?");
+
+            if (!confirmDelete) return;
+
+
+            fetch("/delete-tourists/" + id, {
+
+                method: "DELETE"
+
+            })
+            .then(response => {
+
+                if (response.ok) {
+                    alert("Tourist deleted successfully!");
+                    location.reload();
+                } else {
+                    alert("Failed to delete tourist.");
+                }
+
+            })
+            .catch(error => {
+                console.error(error);
+                alert("Error while deleting tourist.");
+            });
+        }
+
+
+        // =========================
+        // UPDATE FORM - PUT
+        // =========================
+
+        document.getElementById("updateForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+
+                const tourist = {
+
+                    id: document.getElementById("updateId").value,
+
+                    name: document.getElementById("updateName").value,
+
+                    city: document.getElementById("updateCity").value,
+
+                    packageType:
+                        document.getElementById("updatePackageType").value,
+
+                    budget:
+                        parseFloat(
+                            document.getElementById("updateBudget").value
+                        )
+                };
+
+
+                fetch("/update-tourist", {
+
+                    method: "PUT",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify(tourist)
+
+                })
+                .then(response => {
+
+                    if (response.ok) {
+                        alert("Tourist updated successfully!");
+                        location.reload();
+                    } else {
+                        alert("Update failed.");
+                    }
+
+                });
+
+            });
+
+
+        // =========================
+        // BUDGET FORM - PATCH
+        // =========================
+
+        document.getElementById("budgetForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+
+                const id =
+                    document.getElementById("budgetId").value;
+
+                const budget =
+                    document.getElementById("newBudget").value;
+
+
+                fetch("/udpate-budget/" + id + "/" + budget, {
+
+                    method: "PATCH"
+
+                })
+                .then(response => {
+
+                    if (response.ok) {
+                        alert("Budget updated successfully!");
+                        location.reload();
+                    } else {
+                        alert("Budget update failed.");
+                    }
+
+                });
+
+            });
+
+    </script>
+
+</body>
+
+</html>
