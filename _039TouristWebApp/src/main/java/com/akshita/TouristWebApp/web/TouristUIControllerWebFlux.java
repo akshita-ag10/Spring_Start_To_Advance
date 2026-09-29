@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -25,6 +26,11 @@ import com.akshita.TouristWebApp.model.Tourist;
 //so the backend apis are fine here in webclient controller, the issue with the thymeleaf page, in js, so leave it for now
 
 @Controller
+
+//incase you want to specify scope
+//@Scope("prototype")
+//@Score("request")
+//@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class TouristUIControllerWebFlux {
 	
 	@Autowired
