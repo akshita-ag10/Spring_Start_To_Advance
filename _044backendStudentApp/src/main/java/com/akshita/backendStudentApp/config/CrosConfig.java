@@ -10,7 +10,7 @@ public class CrosConfig implements WebMvcConfigurer{
 
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
-		registry.addMapping("/**")
+		registry.addMapping("/**") //tells Spring which API endpoints this CORS configuration should apply to.
 		.allowedOrigins("http://localhost:5173") //can specify multiple origins also here
 		.allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
 		.allowedHeaders("*") //would be used in spring security
